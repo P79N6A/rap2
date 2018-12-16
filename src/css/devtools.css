@@ -5,6 +5,9 @@
     min-width: 1000px;
     min-height: 500px;
 }
+.demo-col-inset{
+    position: relative;
+}
 /* .next-input{
     width: 100%;
 } */
@@ -32,7 +35,7 @@
     background-color: #28a745;
 }
 .styleNamePosi{
-    position: fixed;
+    position: absolute;
     top: 6px;
     right: 20px;
     z-index: 100;
