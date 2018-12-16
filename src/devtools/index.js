@@ -271,7 +271,7 @@ class Devtools extends React.Component {
    })
    this.organizationList('')
   //  location.href = 'http://rap2.alibaba-inc.com/repository'
-  request.get('http://rap2.alibaba-inc.com/account/info')
+  // request.get('http://rap2.alibaba-inc.com/account/info')
    
    
   }
@@ -613,7 +613,7 @@ getComboboxValue(index,data) {
                 </Table>
               </div>
             </TabPane>
-            <TabPane key={2} tab={"rap2地址查找"}>
+            <TabPane key={2} tab={"rap2接口地址查找"}>
               <SearchForm
                 type="close"
                 locale={{ search: "查询", reset: "重置" }}
@@ -644,6 +644,9 @@ getComboboxValue(index,data) {
                 <Table.Column cell={this.addProxyRender.bind(this)} dataIndex='url' title="操作" />
               </Table>
             </TabPane>
+            {/* <TabPane key={3} tab={"rap2"}>
+              <iframe style={{height:'1000px',width:'100%'}} src='http://rap2.alibaba-inc.com/repository'></iframe>
+            </TabPane> */}
           </Tab>
           <div className='styleNamePosi' data-spm-anchor-id="0.0.0.i0.4ef3f651QZRlAe">
             <img alt="HM01030365" src="https://work.alibaba-inc.com/photo/HM01030365.220x220.jpg" class="avatar" data-spm-anchor-id="0.0.0.i11.4ef3f651QZRlAe"/>
