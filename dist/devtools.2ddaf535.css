@@ -384,32 +384,32 @@ th {
 
 @font-face {
   font-family: "Roboto";
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.eot");
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.eot?#iefix") format("embedded-opentype"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.woff2") format("woff2"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.woff") format("woff"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.ttf") format("truetype");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.eot");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.eot?#iefix") format("embedded-opentype"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.woff2") format("woff2"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.woff") format("woff"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-thin.ttf") format("truetype");
   font-weight: 200; }
 
 @font-face {
   font-family: "Roboto";
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-light.eot");
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-light.eot?#iefix") format("embedded-opentype"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-light.woff2") format("woff2"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-light.woff") format("woff"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-light.ttf") format("truetype");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-light.eot");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-light.eot?#iefix") format("embedded-opentype"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-light.woff2") format("woff2"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-light.woff") format("woff"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-light.ttf") format("truetype");
   font-weight: 300; }
 
 @font-face {
   font-family: "Roboto";
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.eot");
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.eot?#iefix") format("embedded-opentype"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.woff2") format("woff2"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.woff") format("woff"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.ttf") format("truetype");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.eot");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.eot?#iefix") format("embedded-opentype"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.woff2") format("woff2"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.woff") format("woff"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-regular.ttf") format("truetype");
   font-weight: 400; }
 
 @font-face {
   font-family: "Roboto";
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.eot");
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.eot?#iefix") format("embedded-opentype"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.woff2") format("woff2"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.woff") format("woff"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.ttf") format("truetype");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.eot");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.eot?#iefix") format("embedded-opentype"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.woff2") format("woff2"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.woff") format("woff"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-medium.ttf") format("truetype");
   font-weight: 500; }
 
 @font-face {
   font-family: "Roboto";
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.eot");
-  src: url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.eot?#iefix") format("embedded-opentype"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.woff2") format("woff2"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.woff") format("woff"), url("//i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.ttf") format("truetype");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.eot");
+  src: url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.eot?#iefix") format("embedded-opentype"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.woff2") format("woff2"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.woff") format("woff"), url("http://i.alicdn.com/artascope-font/20160419204543/font/roboto-bold.ttf") format("truetype");
   font-weight: 700; }
 
 html {
@@ -571,8 +571,8 @@ a {
 /* Icon*/
 @font-face {
   font-family: NextIcon;
-  src: url("//at.alicdn.com/t/font_542300_rx31b374jp.eot");
-  src: url("//at.alicdn.com/t/font_542300_rx31b374jp.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_542300_rx31b374jp.woff") format("woff"), url("//at.alicdn.com/t/font_542300_rx31b374jp.ttf") format("truetype"), url("//at.alicdn.com/t/font_542300_rx31b374jp.svg#articonsvg") format("svg"); }
+  src: url("http://at.alicdn.com/t/font_542300_rx31b374jp.eot");
+  src: url("http://at.alicdn.com/t/font_542300_rx31b374jp.eot?#iefix") format("embedded-opentype"), url("http://at.alicdn.com/t/font_542300_rx31b374jp.woff") format("woff"), url("http://at.alicdn.com/t/font_542300_rx31b374jp.ttf") format("truetype"), url("http://at.alicdn.com/t/font_542300_rx31b374jp.svg#articonsvg") format("svg"); }
 
 .next-icon {
   position: relative;
@@ -5296,7 +5296,7 @@ a {
     .next-select .next-select-clear:hover {
       color: #99A3B3; }
   .next-select-inner {
-    /* fix http://gitlab.alibaba-inc.com/next/select/issues/34*/
+    /* fix http:http://gitlab.alibaba-inc.com/next/select/issues/34*/
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
