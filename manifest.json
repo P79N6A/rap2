@@ -1,0 +1,38 @@
+{
+  // 插件的名称
+  "name": "Proxy",
+  // 清单文件的版本，这个必须写，而且必须是2
+  "manifest_version": 2,
+  // 插件的版本
+  "version": "0.1.2",
+  // 插件描述
+  "description": "代理接口",
+  // 浏览器右上角图标设置，browser_action、page_action、app必须三选一
+  "browser_action": {
+    "default_icon": "./icon.png",
+    // 图标悬停时的标题，可选
+    "default_title": "Proxy",
+    // 入口页面
+    "default_popup": "dist/devtoolsPages.html"
+  },
+  "options_page": "options.html",
+  // 权限申请
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "unlimitedStorage"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "icons":
+  {
+      "16": "icon.png",
+      "48": "icon.png"
+  },
+  "minimum_chrome_version": "21.0.1180.57",
+  "devtools_page": "devtools.html"
+}

@@ -1,0 +1,12 @@
+node_modules/
+tmp/
+temp/
+lib/
+.idea/
+.vscode/
+*.log
+*.iml
+.DS_Store
+test/coverage/
+gemini-report/
+.justconf/

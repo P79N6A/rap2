@@ -1,0 +1,29 @@
+{
+  "name": "rap2",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "devtools": "parcel devtoolsPages.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@alife/hippo": "^1.8.1",
+    "@alife/hippo-page-layout": "^0.0.16",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "reason-react": "^0.5.3",
+    "views": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "bsb-js": "^1.1.7",
+    "typescript": "^3.1.4"
+  }
+}
