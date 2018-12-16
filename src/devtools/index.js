@@ -63,6 +63,41 @@ function getRelativeUrl (url) {
   }
   return url
 }
+function getRelativeUrl2 (url) {
+  if (url instanceof RegExp) {
+    return url
+  }
+  if (!url) {
+    return ''
+  }
+  if (url.indexOf('http://') > -1) {
+    url = url.substring(0,7)
+  } else if (url.indexOf('https://') > -1) {
+    url = url.substring(0,8)
+  }
+  // if (url.charAt(0) !== '/') {
+  //   url = '/' + url
+  // }
+  return url
+}
+function getRelativeUrl3 (url) {
+  if (url instanceof RegExp) {
+    return url
+  }
+  if (!url) {
+    return ''
+  }
+  console.log(url.indexOf('/'))
+  if (url.indexOf('http://') > -1) {
+    url = url.substring(7,url.indexOf('/', 7))
+  } else if (url.indexOf('https://') > -1) {
+    url = url.substring(8,url.indexOf('/', 8))
+  }
+  // if (url.charAt(0) !== '/') {
+  //   url = '/' + url
+  // }
+  return url
+}
 const TabPane = Tab.TabPane;
 class Devtools extends React.Component {
   constructor(props) {
@@ -93,6 +128,7 @@ class Devtools extends React.Component {
       reqValueOc:'ums.hemaos.com ',
       reqValueMe:'http://',
       dataSelct: [],
+      index:0,
       dataSource: [
         {
             component: Combobox,
@@ -222,17 +258,26 @@ class Devtools extends React.Component {
   }
   saveRule1() {
     let $scope = this.state.$scope;
+    console.log(this.state)
     if (this.virify()) {
       if (this.state.type === 1) {
+        
         let defauleApp = this.state.defauleApp;
         let value2 = this.state.value2 || '';
         let curRule = {
-          res:`${this.state.defauleResMe}${this.state.defauleResOc}/${$scope.curRule.res}`,
-          req:`${this.state.defauleReqMe}${this.state.defauleReqOc}/${$scope.curRule.req}`
+          res:`${this.state.resValueMe}${this.state.resValueOc}/${$scope.curRule.res}`,
+          req:`${this.state.resValueMe}${this.state.reqValueOc}/${$scope.curRule.req}`
         }
         curRule.checked = true;
 
         $scope.maps.push(curRule);
+      } else {
+        let curRule = {
+          res:`${this.state.resValueMe}${this.state.resValueOc}/${$scope.curRule.res}`,
+          req:`${this.state.resValueMe}${this.state.reqValueOc}/${$scope.curRule.req}`
+        }
+        $scope.maps[this.state.index]=curRule;
+        
       }
       toast.success('保存成功');
       this.setState({
@@ -319,12 +364,20 @@ getComboboxValue(index,data) {
       req: "",
       res: ""
     };
+    let resValueMe =  'http://'
+    let reqValueMe =  'http://'
+    let resValueOc =  'rap2api.alibaba-inc.com'
+    let reqValueOc =  'ums.hemaos.com'
     this.setState({
       show: status,
       $scope,
       type: 1,
       visible1: true,
-      title:'新增'
+      title:'新增',
+      resValueMe,
+      reqValueMe,
+      resValueOc,
+      reqValueOc
     });
   }
   addProxy(value,status) {
@@ -340,21 +393,40 @@ getComboboxValue(index,data) {
       $scope,
       type: 1,
       visible: true
+      
     });
   }
-  edit(curRule) {
+  edit(curRule,index) {
     let $scope = this.state.$scope;
     let str = JSON.stringify(curRule);
     let obj = JSON.parse(str);
-       obj.res = getRelativeUrl(obj.res);
-       obj.req = getRelativeUrl(obj.req);
-    $scope.curRule = obj;
+    let curRules = {} ;
+    curRules.res = getRelativeUrl(obj.res);
+    curRules.req = getRelativeUrl(obj.req);
+    curRules.checked = obj.checked;
+    let resValueMe =  getRelativeUrl2(obj.res)
+    let reqValueMe =  getRelativeUrl2(obj.req)
+    let resValueOc =  getRelativeUrl3(obj.res)
+    let reqValueOc =  getRelativeUrl3(obj.req)
+      //  console.log(getRelativeUrl2(obj.req));
+      //  obj.resValueMe = getRelativeUrl2(obj.req);
+      //  obj.resValueMe = getRelativeUrl2(obj.req);
+      //  obj.resValueOc = getRelativeUrl(obj.req);
+      //  obj.reqValueOc = getRelativeUrl(obj.req);
+
+       
+    $scope.curRule = curRules;
 
     this.setState({
       $scope,
       visible1: true,
       type: 2,
-      title:'编辑'
+      title:'编辑',
+      index,
+      resValueMe,
+      reqValueMe,
+      resValueOc,
+      reqValueOc
     });
   }
   checked(value, index) {
@@ -371,7 +443,7 @@ getComboboxValue(index,data) {
         <button
           type="button"
           className="btn btn-primary  next-btn-primary btn-xs edit"
-          onClick={this.edit.bind(this, item)}
+          onClick={this.edit.bind(this, item,index)}
         >
           编辑{" "}
         </button>
@@ -500,10 +572,10 @@ getComboboxValue(index,data) {
                     <div>
                     <InputGroup>
                     <Select style={{width:30}}  defaultValue={this.state.defauleResMe}   disabled>
-                        <Option  value={'http'}>http://</Option>
-                        <Option  value={'https'}>https://</Option>
-                        <Option  value={'ws'}>ws://</Option>
-                        <Option  value={'wss'}>wss://</Option>
+                        <Option  value={'http://'}>http://</Option>
+                        <Option  value={'https://'}>https://</Option>
+                        <Option  value={'ws://'}>ws://</Option>
+                        <Option  value={'wss://'}>wss://</Option>
                       </Select>
                       <Select style={{width:180}}  defaultValue={this.state.defauleResOc} disabled>
                         {/* <Option value="orderNumber">运单号</Option> */}
@@ -543,8 +615,8 @@ getComboboxValue(index,data) {
                     <div>
                     <InputGroup>
                     <Select style={{width:30}}  defaultValue={this.state.defauleReqMe} onChange={this.onChangeFrom.bind(this,'reqValueMe')} value={this.state.reqValueMe}> 
-                        <Option  value={'http'}>http://</Option>
-                        <Option  value={'https'}>https://</Option>
+                        <Option  value={'http://'}>http://</Option>
+                        <Option  value={'https://'}>https://</Option>
                         {/* <Option  value={'ws'}>ws://</Option>
                         <Option  value={'wss'}>wss://</Option> */}
                       </Select>
@@ -573,8 +645,8 @@ getComboboxValue(index,data) {
                     <div>
                     <InputGroup>
                     <Select style={{width:30}} onChange={this.onChangeFrom.bind(this,'resValueMe')} value={this.state.resValueMe} >
-                        <Option  value={'http'}>http://</Option>
-                        <Option  value={'https'}>https://</Option>
+                        <Option  value={'http://'}>http://</Option>
+                        <Option  value={'https://'}>https://</Option>
                         {/* <Option  value={'ws'}>ws://</Option>
                         <Option  value={'wss'}>wss://</Option> */}
                       </Select>
@@ -649,8 +721,8 @@ getComboboxValue(index,data) {
             </TabPane> */}
           </Tab>
           <div className='styleNamePosi' data-spm-anchor-id="0.0.0.i0.4ef3f651QZRlAe">
-            <img alt="HM01030365" src="https://work.alibaba-inc.com/photo/HM01030365.220x220.jpg" class="avatar" data-spm-anchor-id="0.0.0.i11.4ef3f651QZRlAe"/>
-            <span class="name" data-spm-anchor-id="0.0.0.i12.4ef3f651QZRlAe">赵孔磊</span>
+            <img alt="HM01030365" src="https://work.alibaba-inc.com/photo/HM01030365.220x220.jpg" className="avatar" data-spm-anchor-id="0.0.0.i11.4ef3f651QZRlAe"/>
+            <span className="name" data-spm-anchor-id="0.0.0.i12.4ef3f651QZRlAe">赵孔磊</span>
         </div>
         </div>
       </div>
