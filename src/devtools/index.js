@@ -37,7 +37,7 @@ const DomainMap = {
   resource: 'alpha.hemaos.com', // 资源位投放项目 后端api地址
   ddy: 'ddy.hemaos.com', // 拉新地图投放项目  士元
   midway: 'midway.hemaos.com', // 拉新地图投放项目  禹力
-flow: 'flow.hemaos.com', // 商品中心二期流程中心接口
+  flow: 'flow.hemaos.com', // 商品中心二期流程中心接口
   shequ: 'shequ.hemaos.com', // 社区CRM微信 @安浙
   contract: 'contract.hemaos.com', // 合同（新）
   rap2api: 'rap2api.alibaba-inc.com',
@@ -75,9 +75,6 @@ function getRelativeUrl2 (url) {
   } else if (url.indexOf('https://') > -1) {
     url = url.substring(0,8)
   }
-  // if (url.charAt(0) !== '/') {
-  //   url = '/' + url
-  // }
   return url
 }
 function getRelativeUrl3 (url) {
@@ -87,15 +84,11 @@ function getRelativeUrl3 (url) {
   if (!url) {
     return ''
   }
-  console.log(url.indexOf('/'))
   if (url.indexOf('http://') > -1) {
     url = url.substring(7,url.indexOf('/', 7))
   } else if (url.indexOf('https://') > -1) {
     url = url.substring(8,url.indexOf('/', 8))
   }
-  // if (url.charAt(0) !== '/') {
-  //   url = '/' + url
-  // }
   return url
 }
 const TabPane = Tab.TabPane;
